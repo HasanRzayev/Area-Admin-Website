@@ -1,0 +1,94 @@
+﻿@using UltraWebsite.Models.Entity
+
+
+
+
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@model List<Product>
+
+
+  <
+        <div class="main-panel">
+          <div class="content-wrapper">
+            <div class="page-header">
+              <h3 class="page-title"> Add Catagory </h3>
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="#">Forms</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Form elements</li>
+                </ol>
+              </nav>
+            </div>
+            <div class="row">
+              <div class="col-md-6 grid-margin stretch-card">
+
+              </div>
+              <div class="col-md-6 grid-margin stretch-card">
+
+              </div>
+              <div class="col-lg-12 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Striped Table</h4>
+
+                    </p>
+                    <button type="button" onclick="location.href='@Url.Action("AddProduct")'" class="btn btn-inverse-warning btn-fw">Add Product</button>
+                    <br />
+                    <br />
+                    <br />
+                    <div class="table-responsive">
+
+                        <table class="table table-striped" >
+                            <tr>
+
+                                <th>Name</th>
+                                <th>Catalogue name</th>
+                                <th>Price</th>
+                                <th>Color</th>
+                                <th>Product Material</th>
+                                <th>Product Adjective</th>
+                                <th>Action</th>
+                                <th>Action</th>
+
+                            </tr>
+                                            @foreach (var product in Model)
+                                            {
+                                                   <tr>
+
+                                                               <td text-align="center"  >@product.Name</td>
+                                                                         <td text-align="center"  >@product.Catalogue?.Name</td>
+                                                                             <td text-align="center"  >@product.price</td>
+                                                                             <td text-align="center"  >@product.Color</td>
+                                                                             <td text-align="center"  >@product.ProductMaterial</td>
+                                                                                     <td text-align="center"  >@product.ProductAdjective</td>
+                                                           <td>
+
+                                                                   <button type="button" class="btn btn-outline-secondary btn-icon-text"> 
+                                                            @Html.ActionLink( "Edit" , "UpdateProduct" , "Products" , new {  Id = product.Id })  
+                                                                       <i class="mdi mdi-file-check btn-icon-append"></i>
+
+                                                                   </button>
+                                                           </td>
+                                                           <td>  
+
+                                                             <button type="button" class="btn btn-inverse-danger btn-fw">
+
+                                                            @Html.ActionLink( "Delete","DeleteProduct","Products" ,new {  Id = product.Id })  
+                                                             </button>
+
+
+
+                                                            </td>
+                                                   </tr> 
+                                            }
+</table>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+

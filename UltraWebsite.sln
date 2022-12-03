@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32922.545
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UltraWebsite", "UltraWebsite\UltraWebsite.csproj", "{5B55CD78-D898-428D-A150-C4478D5C5972}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5B55CD78-D898-428D-A150-C4478D5C5972}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B55CD78-D898-428D-A150-C4478D5C5972}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B55CD78-D898-428D-A150-C4478D5C5972}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B55CD78-D898-428D-A150-C4478D5C5972}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7F58B4CA-11C3-40AE-A0DE-F620CBBDAAA6}
+	EndGlobalSection
+EndGlobal

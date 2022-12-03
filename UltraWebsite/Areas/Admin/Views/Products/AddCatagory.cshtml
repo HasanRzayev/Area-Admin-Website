@@ -1,0 +1,74 @@
+﻿@using UltraWebsite.Models.Entity
+
+
+
+
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+
+@model Catagory
+
+
+
+ <div class="main-panel">
+          <div class="content-wrapper">
+            <div class="page-header">
+              <h3 class="page-title"> Add Catagory </h3>
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="#">Forms</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Form elements</li>
+                </ol>
+              </nav>
+            </div>
+            <div class="row">
+              <div class="col-md-6 grid-margin stretch-card">
+
+              </div>
+              <div class="col-md-6 grid-margin stretch-card">
+
+              </div>
+              <div class="col-lg-12 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Striped Table</h4>
+                    <p class="card-description"> Add class <code>.table-striped</code>
+                    </p>
+                    <div class="table-responsive">
+
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Basic form elements</h4>
+
+                    <form class="forms-sample" asp-action="AddCatagory" asp-controller="Products" method="post" enctype="multipart/form-data">
+                      <div class="form-group">
+                        <label >Name</label>
+                        <input asp-for="Name" type="text" class="form-control" id="exampleInputName1" placeholder="Name">
+                        <span asp-validation-for=Name></span>
+                      </div>
+                      <div class="col-md-10">
+                                            @Html.EditorFor(model => model.Image_url, new { htmlAttributes = new { @class = "form-control", @type="file"} })
+
+                        </div>
+                       <div class="form-group">
+                             <div class="col-md-offset-2 col-md-10">
+                                 <input type="submit" value="Upload" class="btn btn-primary" />
+                             </div>
+                         </div>
+
+
+
+                      <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                      <button class="btn btn-dark">Cancel</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
