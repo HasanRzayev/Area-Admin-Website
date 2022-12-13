@@ -69,7 +69,7 @@ namespace UltraWebsite.Areas.Admin.Controllers
             //var lazim = baza.Products.ToList().Find(p => p.catalogue_id == Id);
             //if (baza.Products.First())
             //{
-
+                    
             //}
             baza.Catalogues.Remove(baza.Catalogues.ToList().Find(p => p.Id == Id));
             baza.SaveChanges();
@@ -166,7 +166,7 @@ namespace UltraWebsite.Areas.Admin.Controllers
             return View(lazim);
         }
         [HttpPost, ActionName("UpdateProduct")]
-        public IActionResult UpdateProduct(Product product)
+        public IActionResult UpdateProduct(Product product) 
         {
 
             if (product.Name != null)
@@ -174,12 +174,15 @@ namespace UltraWebsite.Areas.Admin.Controllers
 
                 Product lazim = baza.Products.Find(product.Id);
                 lazim.Name = product.Name;
-                lazim.catalogue_id = product.catalogue_id;
+                lazim.catalogue_id = product. catalogue_id;
                 baza.SaveChanges();
             }
-            return RedirectToAction("Product");
+            return RedirectToAction("Menu_Product");
         }
 
-   
+        //public IActionResult Index()
+        //{
+        //    return RedirectToActionPermanent("Index","Home");
+        //}
     }
 }

@@ -4,9 +4,12 @@
     {
         public async static Task<string> UploadFile(IFormFile file)
         {
-            var fs = new FileStream(@$"wwwroot/{Guid.NewGuid()}{Path.GetExtension(file.FileName)}", FileMode.Create);
+            string link = Guid.NewGuid().ToString();
+            var fs = new FileStream(@$"wwwroot/{link}{Path.GetExtension(file.FileName)}", FileMode.Create);
+
             await file.CopyToAsync(fs);
-            return fs.Name;
+
+            return @$"~/{link}{Path.GetExtension(file.FileName)}";
         }
     }
 }

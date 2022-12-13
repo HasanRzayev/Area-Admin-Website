@@ -43,7 +43,7 @@
 
                         <table class="table table-striped" >
                             <tr>
-
+                                <th>Image</th>
                                 <th>Name</th>
                                 <th>Catalogue name</th>
                                 <th>Price</th>
@@ -57,7 +57,8 @@
                                             @foreach (var product in Model)
                                             {
                                                    <tr>
-
+                                                                   <td text-align="center"  >  <img src="@product.Image_url" alt="burda sekil var!!!" width="500" height="600"></td>
+                                                         
                                                                <td text-align="center"  >@product.Name</td>
                                                                          <td text-align="center"  >@product.Catalogue?.Name</td>
                                                                              <td text-align="center"  >@product.price</td>

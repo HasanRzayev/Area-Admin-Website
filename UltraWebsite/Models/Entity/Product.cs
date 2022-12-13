@@ -10,6 +10,8 @@
         public string ProductMaterial { get; set; }
         public string ProductAdjective { get; set; }
         public virtual Catagory Catalogue { get; set; }
+
+        public virtual ICollection<Order> Orders { get; set; }
         public virtual IEnumerable<ProductTag> ProductTags { get; set; }=new List<ProductTag>();
 
 

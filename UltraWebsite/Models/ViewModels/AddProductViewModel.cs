@@ -13,6 +13,6 @@ namespace UltraWebsite.Models.ViewModels
         public string ProductAdjective { get; set; }
        
 
-        public int[] TagIds { get; set; }
+        public int[] TagIds { get; set; }=new int[0];
     }
 }
