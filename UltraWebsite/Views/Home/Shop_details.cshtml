@@ -92,12 +92,8 @@
 					<div class="menu-desktop">
 						<ul class="main-menu">
 							<li>
-								<a href="~/css/index.html">Home</a>
-								<ul class="sub-menu">
-									<li><a href="~/css/index.html">Homepage 1</a></li>
-									<li><a href="~/css/home-02.html">Homepage 2</a></li>
-									<li><a href="~/css/home-03.html">Homepage 3</a></li>
-								</ul>
+								<a onclick="location.href='@Url.Action("Index")'">Home</a>
+
 							</li>
 
 							<li>
@@ -203,25 +199,17 @@
 
 			<ul class="main-menu-m">
 				<li>
-					<a href="~/css/index.html">Home</a>
-					<ul class="sub-menu-m">
-						<li><a href="~/css/index.html">Homepage 1</a></li>
-						<li><a href="~/css/home-02.html">Homepage 2</a></li>
-						<li><a href="~/css/home-03.html">Homepage 3</a></li>
-					</ul>
-					<span class="arrow-main-menu-m">
-						<i class="fa fa-angle-right" aria-hidden="true"></i>
-					</span>
+					<a onclick="location.href='@Url.Action("Index")'">Home</a>
+
 				</li>
 
 				<li>
-					<a href="~/css/product.html">Shop</a>
+					<a onclick="location.href='@Url.Action("Shop")'">Shop</a>
 				</li>
 
-				<li>
-					<a href="~/css/shoping-cart.html" class="label1 rs1" data-label1="hot">Features</a>
+				<li class="label1">
+					<a onclick="location.href='@Url.Action("Orders")'">Orders</a>
 				</li>
-
 				<li>
 					<a href="~/css/blog.html">Blog</a>
 				</li>

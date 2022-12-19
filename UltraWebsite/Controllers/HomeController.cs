@@ -71,7 +71,7 @@ namespace UltraWebsite.Controllers
             baza.SaveChanges();
 
 
-            return RedirectToAction("Shop_details");
+            return RedirectToAction("Shop_details", baza.Products.First(a=>a.Id==model.product_id));
 
         }
         public ActionResult DeleteProduct(int Id)

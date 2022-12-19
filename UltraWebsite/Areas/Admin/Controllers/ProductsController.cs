@@ -135,8 +135,6 @@ namespace UltraWebsite.Areas.Admin.Controllers
             var path = await UploadFileHelper.UploadFile(product.Image_url);
             if (product.Name != null)
             {
-
-
                 Product lazim = new Product();
                 lazim.Name = product.Name;
                 lazim.catalogue_id = product.catalogue_id;
