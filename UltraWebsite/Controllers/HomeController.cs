@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.CodeAnalysis.FlowAnalysis.DataFlow;
 using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 using System.Security.Claims;
@@ -32,7 +33,8 @@ namespace UltraWebsite.Controllers
         }
         public async Task<IActionResult> Shop_details(Product pro)
         {
-            return View(pro);
+            ViewData["product"] = pro;
+            return View();
         }
         public async Task<IActionResult> Shop()
         {
@@ -43,17 +45,18 @@ namespace UltraWebsite.Controllers
         {
             return View(baza.Products.ToList());
         }
-
-        public async Task<IActionResult> AddOrder(Product Model,int number)
+        [HttpPost]
+        public async Task<IActionResult> AddOrder(AddOrderViewModel model)
         {
-
+            baza.SaveChanges();
             Order lazim = new Order();
 
-            lazim.product_id = Model.Id;
+            lazim.product_id = model.product_id;
+           
             var claim = (ClaimsIdentity)User.Identity;
             var claims = claim.FindFirst(ClaimTypes.NameIdentifier);
             lazim.user_id = claims.Value;
-            lazim.Count = number;
+            lazim.Count = model.Count;
  
             baza.Add(lazim);
 
@@ -68,7 +71,7 @@ namespace UltraWebsite.Controllers
             baza.SaveChanges();
 
 
-            return RedirectToAction("Shop_details", Model);
+            return RedirectToAction("Shop_details");
 
         }
         public ActionResult DeleteProduct(int Id)
